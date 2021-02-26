@@ -1,5 +1,17 @@
-
 <div class="users">
+  <div class="search">
+    <input type="text" [(ngModel)]="searchItem" placeholder="Name Filter" />
+    <input type="text" [(ngModel)]="searchgender" placeholder="Gender Filter" />
+
+    <select [(ngModel)]="searchItem">
+     
+        <option value="">select</option>
+        <option *ngFor="let user of users ">
+          {{user.name}}
+        </option>
+    
+    </select>
+  </div>
   <table>
     <thead>
       <th>Id</th>
@@ -15,7 +27,9 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let user of users; index as i" >
+      <tr
+        *ngFor="let user of users | nameFilter:searchItem |genderFilter:searchgender; index as i "
+      >
         <td>{{i+1}}</td>
         <td>{{user.name}}</td>
         <td>{{user.gender}}</td>
@@ -26,7 +40,6 @@
         <td>{{user.salary | rowSum:user.allowance}}</td>
         <td>{{user.dob | date:'shortDate'}}</td>
         <td>{{user.dob | age}}</td>
-
       </tr>
     </tbody>
   </table>

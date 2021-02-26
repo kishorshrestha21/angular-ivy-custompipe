@@ -11,6 +11,8 @@ export class UsersDataComponent implements OnInit {
   constructor(private _myData:MyDataService) { }
 
 users=[];
+searchItem='';
+searchgender='';
   ngOnInit() {
     this.users = this._myData.users;
   }

@@ -11,10 +11,12 @@ import { ThreedotPipe } from './threedot.pipe';
 import { AgePipe } from './age.pipe';
 import { RowSumPipe } from './row-sum.pipe';
 import { BackgroundColorPipe } from './background-color.pipe';
+import { NameFilterPipe } from './name-filter.pipe';
+import { GenderFilterPipe } from './gender-filter.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, UsersDataComponent, GenderPipe, ThreedotPipe, AgePipe, RowSumPipe, BackgroundColorPipe ],
+  declarations: [ AppComponent, HelloComponent, UsersDataComponent, GenderPipe, ThreedotPipe, AgePipe, RowSumPipe, BackgroundColorPipe, NameFilterPipe, GenderFilterPipe ],
   bootstrap:    [ AppComponent ],
   providers: [MyDataService]
 })
