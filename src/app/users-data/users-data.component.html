@@ -24,6 +24,8 @@
         <td>{{user.salary}}</td>
         <td>{{user.allowance}}</td>
         <td>{{user.salary | rowSum:user.allowance}}</td>
+        <td>{{user.dob | date:'shortDate'}}</td>
+        <td>{{user.dob | age}}</td>
 
       </tr>
     </tbody>
