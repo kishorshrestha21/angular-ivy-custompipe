@@ -1,6 +1,7 @@
 .users {
   width: 80%;
   margin: auto;
+  overflow: scroll;
 }
 
 h2 {
@@ -12,6 +13,7 @@ table {
   border: 1px solid rgba(126, 123, 123, 0.411);
   border-collapse: collapse;
   width: 100%;
+  overflow: scroll;
 }
 th {
   background-color: rgb(141, 238, 205);
@@ -20,10 +22,10 @@ th {
 th,
 td {
   border: 1px solid rgba(126, 123, 123, 0.411);
-  padding: 8px;
+  padding: 10px;
   color: rgb(65, 64, 64);
 }
 
-input{
+input {
   padding: 8px;
 }

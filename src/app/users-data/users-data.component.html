@@ -31,10 +31,10 @@
         *ngFor="let user of users | nameFilter:searchItem |genderFilter:searchgender; index as i "
       >
         <td>{{i+1}}</td>
-        <td>{{user.name}}</td>
+        <td>{{user.name | gender:user.gender}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.city}}</td>
-        <td>{{user.cityCode}}</td>
+        <td [innerHTML] ="user.cityCode | backgroundColor:user.cityCode" ></td>
         <td>{{user.salary}}</td>
         <td>{{user.allowance}}</td>
         <td>{{user.salary | rowSum:user.allowance}}</td>
