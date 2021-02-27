@@ -2,14 +2,16 @@
   <div class="search">
     <input type="text" [(ngModel)]="searchItem" placeholder="Name Filter" />
     <input type="text" [(ngModel)]="searchgender" placeholder="Gender Filter" />
-
+    <label for="">Search</label>
+    <input type="Text" [(ngModel)]="searchValue" placeholder="Search">
+    <button (click) ="onSearch()">Search</button>
+    <button (click) ="onClear()">Clear Serach</button>
+    {{searchData}}
     <select [(ngModel)]="searchItem">
-     
-        <option value="">select</option>
-        <option *ngFor="let user of users ">
+      <option value="">select</option>
+      <option *ngFor="let user of users ">
           {{user.name}}
-        </option>
-    
+      </option>
     </select>
   </div>
   <table>
@@ -28,19 +30,26 @@
 
     <tbody>
       <tr
-        *ngFor="let user of users | nameFilter:searchItem |genderFilter:searchgender; index as i "
+        *ngFor="let user of users | nameFilter:searchItem |genderFilter:searchgender | search:searchData;  index as i "
       >
         <td>{{i+1}}</td>
         <td>{{user.name | gender:user.gender}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.city}}</td>
-        <td [innerHTML] ="user.cityCode | backgroundColor:user.cityCode" ></td>
+        <td [innerHTML]="user.cityCode | backgroundColor:user.cityCode"></td>
         <td>{{user.salary}}</td>
         <td>{{user.allowance}}</td>
-        <td>{{user.salary | rowSum:user.allowance}}</td>
+        <td>{{user.salary | rowSum:user.allowance }}</td>
         <td>{{user.dob | date:'shortDate'}}</td>
         <td>{{user.dob | age}}</td>
+        <!-- <h2>{{0 | test:user.salary:user.allowance}}</h2> -->
       </tr>
     </tbody>
+    <h3>Total Salary: {{ users | columnTotal:'salary' }}</h3>
+    <h3>Total Allowance: {{ users | columnTotal:'allowance' }}</h3>
+    
   </table>
 </div>
+
+
+<h2>{{700 | test:100:200}}</h2>

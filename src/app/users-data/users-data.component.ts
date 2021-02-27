@@ -12,9 +12,23 @@ export class UsersDataComponent implements OnInit {
 
 users=[];
 searchItem='';
+test:number=600;
+
+searchValue = '';
 searchgender='';
+
+searchData =''
   ngOnInit() {
     this.users = this._myData.users;
+  }
+
+  onSearch(){
+    this.searchData = this.searchValue
+  }
+
+  onClear(){
+    this.searchValue ='';
+    this.searchData ='';
   }
 
 }

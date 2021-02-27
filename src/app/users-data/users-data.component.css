@@ -29,3 +29,7 @@ td {
 input {
   padding: 8px;
 }
+
+.search input{
+ margin:10px;
+}
